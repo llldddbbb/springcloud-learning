@@ -11,9 +11,18 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+  application:
+      name: consumer-movie
 logging:
   level:
     root: info
     org.hibernate: info
     org.hibernate.type.descriptor.sql.BasicBinder: trace
     org.hibernate.type.descriptor.sql.BasicExtractor: trace
+
+eureka:
+  client:
+    service-url:
+      defauleZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

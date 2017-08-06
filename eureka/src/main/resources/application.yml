@@ -1,0 +1,12 @@
+server:
+  port: 8761
+eureka:
+  client:
+    #表示不把自己注册进eureka
+    registerWithEureka: false
+    #表示是否从其他eureka server获取注册信息，此处为单个server，固false
+    fetch-registry: false
+    #设置与eureka交互的地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  #关闭eureka自我保护机制
