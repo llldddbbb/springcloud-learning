@@ -1,12 +1,13 @@
 package com.ldb.springcloud.feign;
 
+import com.ldb.springcloud.feign.fallback.FeignClientFallback;
 import com.ldb.springcloud.pojo.User;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@FeignClient(name = "provider-user")
+@FeignClient(name = "provider-user",fallback = FeignClientFallback.class)
 public interface UserFeignClient {
 
     @GetMapping("/{id}")

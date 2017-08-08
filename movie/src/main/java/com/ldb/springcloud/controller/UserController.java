@@ -25,18 +25,18 @@ public class UserController {
     // }
 
 
-    @HystrixCommand(fallbackMethod = "findByIdFallback")
+    // @HystrixCommand(fallbackMethod = "findByIdFallback")
     @GetMapping("/user/{id}")
     public User findById(@PathVariable int id){
         return userFeignClient.findById(id);
     }
 
-    public User findByIdFallback(int id){
-        User user=new User();
-        user.setId(-1);
-        user.setName("默认账户");
-        return user;
-    }
+    // public User findByIdFallback(int id){
+    //     User user=new User();
+    //     user.setId(-1);
+    //     user.setName("默认账户");
+    //     return user;
+    // }
 
     @GetMapping("/user")
     public User get2(){
