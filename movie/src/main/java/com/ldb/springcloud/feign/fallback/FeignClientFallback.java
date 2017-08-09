@@ -8,6 +8,7 @@ import java.util.Map;
 
 @Component
 public class FeignClientFallback implements UserFeignClient {
+
     @Override
     public User findById(int id) {
         User user=new User();
